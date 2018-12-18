@@ -16,12 +16,19 @@
   "dependencies": {
     "axios": "0.18.0",
     "element-ui": "2.4.6",
+    "html-webpack-plugin": "^4.0.0-alpha",
     "js-cookie": "2.2.0",
     "normalize.css": "7.0.0",
     "nprogress": "0.2.0",
+    "vee-validate": "^2.1.4",
     "vue": "2.5.17",
+    "vue-i18n": "^8.4.0",
     "vue-router": "3.0.1",
     "vuex": "3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PanJiaChen/vue-element-template.git"
   },
   "devDependencies": {
     "autoprefixer": "8.5.0",

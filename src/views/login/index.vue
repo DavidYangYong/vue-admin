@@ -1,12 +1,12 @@
 <template>
   <div class="login-container">
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
-      <h3 class="title">vue-admin-template</h3>
+      <h3 class="title">{{ $t('login.title') }}</h3>
       <el-form-item prop="username">
         <span class="svg-container">
           <svg-icon icon-class="user" />
         </span>
-        <el-input v-model="loginForm.username" name="username" type="text" auto-complete="on" placeholder="username" />
+        <el-input v-model="loginForm.username" name="username" type="text" auto-complete="on" placeholder="username"/>
       </el-form-item>
       <el-form-item prop="password">
         <span class="svg-container">
@@ -25,12 +25,12 @@
       </el-form-item>
       <el-form-item>
         <el-button :loading="loading" type="primary" style="width:100%;" @click.native.prevent="handleLogin">
-          Sign in
+          {{ $t('login.logIn') }}
         </el-button>
       </el-form-item>
       <div class="tips">
-        <span style="margin-right:20px;">username: admin</span>
-        <span> password: admin</span>
+        <span style="margin-right:20px;">username: 10086</span>
+        <span> password: 18cf69f1ce412a0416740b917a33d853</span>
       </div>
     </el-form>
   </div>
@@ -58,11 +58,11 @@ export default {
     }
     return {
       loginForm: {
-        username: 'admin',
-        password: 'admin'
+        username: '10086',
+        password: '18cf69f1ce412a0416740b917a33d853'
       },
       loginRules: {
-        username: [{ required: true, trigger: 'blur', validator: validateUsername }],
+        username: [{ required: true, trigger: 'blur' , validator: validateUsername}],
         password: [{ required: true, trigger: 'blur', validator: validatePass }]
       },
       loading: false,

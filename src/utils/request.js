@@ -31,9 +31,10 @@ service.interceptors.response.use(
      * code为非20000是抛错 可结合自己业务进行修改
      */
     const res = response.data
-    if (res.code !== 20000) {
+     console.log(res.access_token)
+    if (res.access_token == '') {
       Message({
-        message: res.message,
+        message: 'access_token is null',
         type: 'error',
         duration: 5 * 1000
       })
