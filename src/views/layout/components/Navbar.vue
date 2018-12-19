@@ -42,9 +42,21 @@ export default {
       this.$store.dispatch('ToggleSideBar')
     },
     logout() {
-      this.$store.dispatch('LogOut').then(() => {
+       this.$confirm('此操作将登出系统, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+         this.$store.dispatch('FedLogOut').then(() => {
         location.reload() // 为了重新实例化vue-router对象 避免bug
       })
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消登出'
+          });          
+        });
+      
     }
   }
 }

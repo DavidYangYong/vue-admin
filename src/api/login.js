@@ -1,6 +1,7 @@
 import request from '@/utils/request'
 import ssoconfig from '@/config/config.js'
 import qs from 'qs'
+import { removeToken } from '@/utils/auth' // 验权
 
 export function login(username, password) {
   let  queryData= {
@@ -31,8 +32,8 @@ export function getInfo(token) {
     })
 }
 export function logout() {
-    return request({
-        url: ssoconfig.logoutUri,
-        method: 'post'
-    })
+   // return request({
+   //     url: ssoconfig.logoutUri,
+   //     method: 'post'
+   // })
 }
